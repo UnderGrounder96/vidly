@@ -5,7 +5,6 @@ EXPOSE ${PORT}
 
 WORKDIR /app
 # RUN addgroup app && adduser -SG app app
-# RUN chown app:app -R /app /usr/local/lib/node_modules /usr/local/bin
 # USER app
 
 COPY package*.json ./

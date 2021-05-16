@@ -1,4 +1,4 @@
---- # Sample run: docker-compose up --build
+--- # Sample run: docker-compose up --build -d
 version: "3.8"
 
 services:
