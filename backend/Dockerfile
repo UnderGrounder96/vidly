@@ -4,8 +4,6 @@ ENV NODE_ENV="development" PORT="3001"
 EXPOSE ${PORT}
 
 WORKDIR /app
-# RUN addgroup app && adduser -SG app app
-# USER app
 
 COPY package*.json ./
 RUN npm install
