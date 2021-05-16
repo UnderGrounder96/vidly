@@ -1,16 +1,16 @@
 {
   "name": "vidly-backend",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "description": "vidly-backend",
+  "repository": "github:UnderGrounder96/vidly",
   "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "db:up": "migrate-mongo up",
-    "start": "nodemon --ignore './tests' index.js",
+    "db:up": "npm install migrate-mongo && migrate-mongo up",
+    "start": "npm install nodemon && nodemon --ignore './tests' index.js",
     "test": "jest --watchAll --colors"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",

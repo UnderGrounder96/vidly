@@ -1,13 +1,15 @@
 FROM node:14.16.0-alpine3.13
 
-RUN addgroup app && adduser -S -G app app
-USER app
+ENV NODE_ENV="development" PORT="3001"
+EXPOSE ${PORT}
 
 WORKDIR /app
+# RUN addgroup app && adduser -SG app app
+# RUN chown app:app -R /app /usr/local/lib/node_modules /usr/local/bin
+# USER app
+
 COPY package*.json ./
 RUN npm install
-COPY . . 
-
-EXPOSE 3001 
+COPY . .
 
 CMD ["npm", "start"]
