@@ -9,6 +9,12 @@ services:
     ports:
       - 3000:3000
 
+  frontend-tests:
+    depends_on:
+      - frontend
+    image: vidly_frontend
+    command: npm test
+
   backend:
     depends_on:
       - db
@@ -18,6 +24,13 @@ services:
     environment:
       DB_URL: mongodb://db/vidly
     command: ./docker-entrypoint.sh
+
+  #TODO: fix backend- tests
+  # backend-tests:
+  #   depends_on:
+  #     - backend
+  #   image: vidly_backend
+  #   command: npm test
 
   db:
     image: mongo:4.0-xenial
